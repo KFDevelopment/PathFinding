@@ -17,6 +17,10 @@ table, th, td {
   background-color: #0147c6;
 }
 
-td:hover{
-  background-color: #d5d9e0;
+.start{
+  background-color: green;
+}
+
+.end{
+  background-color: red;
 }

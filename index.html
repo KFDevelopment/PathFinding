@@ -41,9 +41,29 @@
     <div class="card-body">
       <h5 class="card-title">Cursor</h5>
       <div>
-        <button type="button" class="btn btn-primary" onclick="switchCursor(0);">Objectif</button>
-        <button type="button" class="btn btn-secondary" onclick="switchCursor(1);">Wall</button>
-        <button type="button" class="btn btn-success" onclick="switchCursor(2);">Start</button>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="typeRadios" id="typeRadiosA" value="0" checked onchange="switchCursor(0);">
+          <label class="form-check-label" for="typeRadiosA">
+            <span class="text-white bg-success">Place starting point</span>
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="typeRadios" id="typeRadiosB" value="1" onchange="switchCursor(1);">
+          <label class="form-check-label" for="typeRadiosB">
+            <span class="text-white bg-secondary">Place wall</span>
+
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="typeRadios" id="typeRadiosC" value="2" onchange="switchCursor(2);">
+          <label class="form-check-label" for="typeRadiosC">
+            <span class="text-white bg-danger">Place end point</span>
+          </label>
+        </div>
+        <br>
+        <button type="button" class="btn btn-primary" onclick="pathFinding();">Start process</button>
     </div>
     </div>
   </div>
