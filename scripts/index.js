@@ -7,7 +7,7 @@ var currentPositionY = 0;
 var actualCursors = 0;
 var openList = [];
 var closedList = [];
-
+var pathfound=false;
 
 var maxPositionY = 0;
 
@@ -24,6 +24,7 @@ const reducer = (min, currentValue) => currentValue.heuristicDistance < min.heur
 
   function resetGrid(){
     gridSize = $("#gridSize").val();
+      $("#pathfound").html("");
     redrawGrid(gridSize);
   }
   function redrawGrid(gridSize){
@@ -161,6 +162,7 @@ var currentCell;
     console.log(currentCell);
 
     if(currentCell.id == endCell.id){
+      pathfound=true;
       break;
     }
 
@@ -203,6 +205,9 @@ var currentCell;
   }
 drawPath(currentCell);
 console.log(closedList);
+if(!pathfound){
+  $("#pathfound").html("Path not found");
+}
 
 }
 
