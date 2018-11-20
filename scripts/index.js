@@ -8,6 +8,7 @@ var actualCursors = 0;
 var openList = [];
 var closedList = [];
 
+
 var maxPositionY = 0;
 
 const reducer = (min, currentValue) => currentValue.heuristicDistance < min.heuristicDistance ? currentValue : min;
@@ -21,7 +22,10 @@ const reducer = (min, currentValue) => currentValue.heuristicDistance < min.heur
     e.preventDefault();
   })
 
-
+  function resetGrid(){
+    gridSize = $("#gridSize").val();
+    redrawGrid(gridSize);
+  }
   function redrawGrid(gridSize){
     maxPositionY = 0;
     $("#percole,#notPercole").hide();
